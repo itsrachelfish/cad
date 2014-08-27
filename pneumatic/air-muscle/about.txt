@@ -1,0 +1,6 @@
+/!\ Don't try this at home! Pneumatics are dangerous! /!\
+
+Some openscad files for making air muscles.
+
+Designed for 3d printing with ABS using fused deposition modeling.
+Round pieces are printed in halves to since support material would take a lot of sanding to make air tight... at least, in theory.
