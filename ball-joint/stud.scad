@@ -10,15 +10,7 @@
 
 */
 
-function radius(diameter) = diameter / 2;
-
-module bolt(length, diameter)
-{
-    rotate([0, 90, 0])
-    {
-        cylinder(h = length, r = radius(diameter));
-    }
-}
+include <helper.scad>;
 
 module stud(ball, pipe, length, bolt)
 {
@@ -46,10 +38,3 @@ module stud(ball, pipe, length, bolt)
         }
     }
 }
-
-// Example stud
-//stud(2.54, 1.27, 5.08, 0.3175);
-
-// So smooth~
-$fn = 100;
-

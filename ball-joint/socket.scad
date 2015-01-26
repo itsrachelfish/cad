@@ -10,18 +10,7 @@
 
 */
 
-// Temporary stud include for testing
-include <stud.scad>;
-
-function radius(diameter) = diameter / 2;
-
-module bolt(length, diameter)
-{
-    rotate([0, 90, 0])
-    {
-        cylinder(h = length, r = radius(diameter));
-    }
-}
+include <helper.scad>;
 
 module socket(ball, pipe, size, bolt)
 {
@@ -55,13 +44,3 @@ module socket(ball, pipe, size, bolt)
     }
     
 }
-
-socket(2.56, 2.1336, [4, 1.5, 7], 0.3175);
-
-rotate([180, 0, 0])
-{
-    stud(2.54, 1.27, 5.08, 0.3175);
-}
-
- // So smooth~
-$fn = 100;
