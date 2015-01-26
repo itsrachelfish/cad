@@ -39,9 +39,15 @@ module socket(ball, pipe, size, bolt)
             bolt(size[0], bolt);
         }
 
-        translate([-size[0] / 2, 0, size[2] - size[2] / 3])
+        translate([-size[0] / 2, 0, size[2] - size[2] / 4])
         {
             bolt(size[0], bolt);
+        }
+        
+        // Cut hole for the connecting pipe
+        translate([0, 0, size[2] / 4])
+        {
+            cylinder(h = 6, r = radius(pipe));
         }
         
         // Cut hole for the ball
@@ -50,7 +56,7 @@ module socket(ball, pipe, size, bolt)
     
 }
 
-socket(2.6, 3, [4, 1.5, 6], 0.3175);
+socket(2.56, 2.1336, [4, 1.5, 7], 0.3175);
 
 rotate([180, 0, 0])
 {
