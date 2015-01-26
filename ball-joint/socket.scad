@@ -15,6 +15,14 @@ include <stud.scad>;
 
 function radius(diameter) = diameter / 2;
 
+module bolt(length, diameter)
+{
+    rotate([0, 90, 0])
+    {
+        cylinder(h = length, r = radius(diameter));
+    }
+}
+
 module socket(ball, pipe, size, bolt)
 {
     difference()
@@ -27,18 +35,12 @@ module socket(ball, pipe, size, bolt)
         // Cut bolt holes out of the socket
         translate([-size[0] / 2, 0, size[2] / 2.5])
         {
-            rotate([0, 90, 0])
-            {
-                cylinder(h = 4, r = radius(bolt));
-            }
+            bolt(size[0], bolt);
         }
 
         translate([-size[0] / 2, 0, size[2] - size[2] / 3])
         {
-            rotate([0, 90, 0])
-            {
-                cylinder(h = 4, r = radius(bolt));
-            }
+            bolt(size[0], bolt);
         }
         
         sphere(r = radius(ball));

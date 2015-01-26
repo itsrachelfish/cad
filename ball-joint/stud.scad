@@ -12,6 +12,14 @@
 
 function radius(diameter) = diameter / 2;
 
+module bolt(length, diameter)
+{
+    rotate([0, 90, 0])
+    {
+        cylinder(h = length, r = radius(diameter));
+    }
+}
+
 module stud(ball, pipe, length, bolt)
 {
     // Create ball
@@ -28,18 +36,12 @@ module stud(ball, pipe, length, bolt)
             // Cut bolt holes out of the connecting rod
             translate([-radius(pipe), 0, length / 4])
             {
-                rotate([0, 90, 0])
-                {
-                    cylinder(h = pipe, r = radius(bolt));
-                }
+                bolt(pipe, bolt);
             }
 
             translate([-radius(pipe), 0, length - (length / 4)])
             {
-                rotate([0, 90, 0])
-                {
-                    cylinder(h = pipe, r = radius(bolt));
-                }
+                bolt(pipe, bolt);
             }
         }
     }
