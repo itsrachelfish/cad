@@ -1,6 +1,6 @@
 /*
 
- This module takes three parameters:
+ This module takes four parameters:
     ball - Diameter of the ball
     pipe - Inner diameter of the pipe being conencting to
     length - Length of the stud which extends into the pipe
@@ -26,23 +26,27 @@ module stud(ball, pipe, length, bolt)
             cylinder(h = length, r = radius(pipe));
 
             // Cut bolt holes out of the connecting rod
-                
-        }
-
-        rotate()
-        {
-            translate([0, 0, -4])
+            translate([-radius(pipe), 0, length / 4])
             {
-                cylinder(h = pipe, r = radius(bolt));
+                rotate([0, 90, 0])
+                {
+                    cylinder(h = pipe, r = radius(bolt));
+                }
+            }
+
+            translate([-radius(pipe), 0, length - (length / 4)])
+            {
+                rotate([0, 90, 0])
+                {
+                    cylinder(h = pipe, r = radius(bolt));
+                }
             }
         }
     }
-
-    // TODO: Cut connecting holes 
 }
 
 // Example stud
-stud(2.54, 1.27, 5.08, 0.3175);
+//stud(2.54, 1.27, 5.08, 0.3175);
 
 // So smooth~
 $fn = 100;
