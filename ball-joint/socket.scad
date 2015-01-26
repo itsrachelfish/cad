@@ -27,13 +27,14 @@ module socket(ball, pipe, size, bolt)
 {
     difference()
     {
-        translate([-size[0] / 2, 0, -ball / 4])
+        // Create socket body
+        translate([-size[0] / 2, -size[1] / 2, -ball / 4])
         {
             cube(size);
         }
         
         // Cut bolt holes out of the socket
-        translate([-size[0] / 2, 0, size[2] / 2.5])
+        translate([-size[0] / 2, 0, size[2] - size[2] / 1.5])
         {
             bolt(size[0], bolt);
         }
@@ -43,12 +44,13 @@ module socket(ball, pipe, size, bolt)
             bolt(size[0], bolt);
         }
         
+        // Cut hole for the ball
         sphere(r = radius(ball));
     }
     
 }
 
-socket(3, 3, [4, 1, 5], 0.3175);
+socket(2.6, 3, [4, 1.5, 6], 0.3175);
 
 rotate([180, 0, 0])
 {
