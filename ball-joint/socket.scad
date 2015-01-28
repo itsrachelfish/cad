@@ -6,7 +6,7 @@
     size - Size of the socket
     bolt - Diameter of the bolts connecting the socket to the pipe
 
- Please note, all measurements in centimeters!
+ Please note, all measurements are in millimeters!
 
 */
 
@@ -36,7 +36,7 @@ module socket(ball, pipe, size, bolt)
         // Cut hole for the connecting pipe
         translate([0, 0, size[2] / 4])
         {
-            cylinder(h = 6, r = radius(pipe));
+            cylinder(h = size[2], r = radius(pipe));
         }
         
         // Cut hole for the ball

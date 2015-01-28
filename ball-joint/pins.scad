@@ -11,7 +11,7 @@ include <measurements.scad>;
 cylinder(h = ball_inner / 2, r = bolt / 2);
 
 // Pipe pin
-translate([1, 0, 0])
+translate([bolt * 1.5, 0, 0])
 {
     cylinder(h = pipe_inner / 2, r = bolt / 2);
 }

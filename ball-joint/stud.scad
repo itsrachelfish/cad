@@ -6,7 +6,7 @@
     length - Length of the stud which extends into the pipe
     bolt - Diameter of the bolts connecting the stud to the pipe
 
- Please note, all measurements in centimeters!
+ Please note, all measurements are in millimeters!
 
 */
 
