@@ -1,20 +1,17 @@
 /*
 
- This file is for the little pins that connect the stud together
+ This file is for the little pins that connect the printable stud together
  
 */
 
 include <helper.scad>;
-
-ball = 2.54;
-pipe = 1.27;
-bolt = 0.3175;
+include <measurements.scad>;
 
 // Ball pin
-cylinder(h = ball / 2, r = bolt / 2);
+cylinder(h = ball_inner / 2, r = bolt / 2);
 
 // Pipe pin
 translate([1, 0, 0])
 {
-    cylinder(h = pipe / 2, r = bolt / 2);
+    cylinder(h = pipe_inner / 2, r = bolt / 2);
 }

@@ -6,11 +6,12 @@
 
 include <socket.scad>;
 include <stud.scad>;
+include <measurements.scad>;
 
-socket(2.645, 2.1336, [4, 1.5, 7], 0.3175);
+socket(ball_outer, pipe_outer, socket_size, bolt);
 
 rotate([75, 0, 0])
 {
-    stud(2.54, 1.27, 5.08, 0.3175);
+    stud(ball_inner, pipe_inner, stud_length, bolt);
 }
 
