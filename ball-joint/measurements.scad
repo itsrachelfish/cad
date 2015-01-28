@@ -7,13 +7,13 @@
 
 */
 
-bolt = 4.04;
+bolt = 4.5;
 
-ball_inner = 25.4;
-ball_outer = 25.6;
+ball_inner = 25;
+ball_outer = 25;
 
 pipe_inner = 14.85;
-pipe_outer = 21.44;
+pipe_outer = 21.75;
 
-stud_length = 50.8;
+stud_length = 51;
 socket_size = [40, 15, 70];
