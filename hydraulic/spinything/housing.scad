@@ -6,7 +6,7 @@ module housing(width, height, port)
     {
         hull()
         {
-            cylinder(h = height, r = width * 0.435);
+            cylinder(h = height, r = width * 0.43);
 
             translate([-width * 0.15, -width * 0.3, 0])
             {
@@ -38,6 +38,6 @@ module housing(width, height, port)
    }
 }
 
-housing(50, 15, 4.2);
+housing(50, 18, 4.2);
 
 $fn = 50;

@@ -50,6 +50,10 @@ module plate(width, height)
 }
 
 // Example usage
-plate(width = 50, height = 3);
+difference()
+{
+    plate(width = 50, height = 3);
+    cylinder(h = 6, r = 50 / 14);
+}
 
 $fn = 50;
