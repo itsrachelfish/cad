@@ -1,11 +1,13 @@
+use <../lego/axle.scad>;
+
 module spiral()
 {
-    for(z = [1:360])
+    for(z = [1:540])
     {
         rotate(z * 2)
         translate([5, 0, z * .02])
-        rotate([90, 0, 0])
-        cube(size = [7, 2, 1], center = false);
+        rotate([0, 90, 0])
+        cylinder(h = 5, r1 = 0.3, r2 = 2, center = false);
     }
 }
 
@@ -15,23 +17,18 @@ module hole(h, r)
     cylinder(h = h * 2, r = r, center = true);
 }
 
-
 difference()
 {
-    cylinder(h = 30, r = 7.5);
-
-    translate([0, 0, 3])
-    hole(10, 1.5);
-
-    translate([0, 0, 27])
-    hole(10, 1.5);
+    cylinder(h = 25, r = 7.5);
     
-    translate([0, 0, 17.5])
+    translate([0, 0, 14])
     spiral();
     
-    translate([0, 0, 12.5])
+    translate([0, 0, 11])
     mirror([0, 0, 1])
     spiral();
+    
+    axle(30);
 }
 
-$fn = 10;
+//    spiral();
