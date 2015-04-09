@@ -5,11 +5,29 @@
 
 module axle(length)
 {
+    if(length > 5)
+    {
+        height = 5.25;
+        width = 2.25;
+
+        make_axle(height, width, length);
+    }
+    else
+    {
+        height = 4.95;
+        width = 1.95;
+
+        make_axle(height, width, length);
+    }
+}
+
+module make_axle(height, width, length)
+{
     translate([0, 0, length / 2])
     {
         rotate([0, 0, 90])
-        cube([5.25, 2.25, length], center = true);
-        cube([5.25, 2.25, length], center = true);
+        cube([height, width, length], center = true);
+        cube([height, width, length], center = true);
     }
 }
 
