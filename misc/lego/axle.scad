@@ -8,8 +8,8 @@ module axle(length)
     translate([0, 0, length / 2])
     {
         rotate([0, 0, 90])
-        cube([4.95, 1.95, length], center = true);
-        cube([4.95, 1.95, length], center = true);
+        cube([5.25, 2.25, length], center = true);
+        cube([5.25, 2.25, length], center = true);
     }
 }
 
